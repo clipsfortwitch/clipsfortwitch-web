@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- ① 文字コードを UTF-8 に明示（日本語表示のため） -->
+  <meta charset="UTF-8">
+  <!-- ② モバイル対応：ビューポートを端末幅に合わせる -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ③ 検索エンジンに拾われないよう noindex（このページは中継専用なので公開価値ゼロ） -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Signing in to ClipsForTwitch…</title>
+  <style>
+    /* ④ シンプルなセンタリングだけ（中継ページなので装飾は最低限） */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      background: #0e0e10; /* Twitch ダークテーマ風 */
+      color: #efeff1;
+      text-align: center;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #2c2c34;
+      border-top-color: #9146ff; /* Twitch Purple */
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    a {
+      color: #9146ff;
+      margin-top: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <!-- ⑤ ユーザーへの説明（一瞬しか見えないが、リダイレクト失敗時の保険） -->
+  <div class="spinner"></div>
+  <p>ClipsForTwitch に戻っています…</p>
+  <!-- ⑥ JS が無効・失敗した時のフォールバックリンク（後で id="fallback" を JS で書き換える） -->
+  <a id="fallback" href="#">アプリに戻らない場合はこちら</a>
+
+  <script>
+    // ⑦ Twitch から渡された認可コード等のクエリ文字列を取得（"?code=xxx&state=yyy" 形式）
+    const query = window.location.search;
+
+    // ⑧ アプリ側で待ち受けるカスタムスキーム URL を組み立てる
+    //    例: clipsfortwitch://oauth/callback?code=xxx&state=yyy
+    const appURL = "clipsfortwitch://oauth/callback" + query;
+
+    // ⑨ フォールバックリンクの href を実際のスキームに差し替え（JS失敗時の手動タップ用）
+    document.getElementById("fallback").href = appURL;
+
+    // ⑩ アプリへリダイレクト（replace を使うことで履歴に残さない → 戻るボタンでループしない）
+    window.location.replace(appURL);
+  </script>
+</body>
+</html>
