@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サポート - ClipsForTwitch</title>
+    <style>
+        /* ① privacy.html と統一感を出すため同じスタイル */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 16px 64px;
+        }
+        h1 { font-size: 1.6rem; border-bottom: 2px solid #9146FF; padding-bottom: 8px; }
+        h2 { font-size: 1.2rem; margin-top: 2em; color: #9146FF; }
+        /* ② FAQ の質問は太字で目立たせる */
+        .faq dt { font-weight: bold; margin-top: 1.2em; }
+        .faq dd { margin-left: 0; margin-top: 0.4em; color: #333; }
+        .meta { color: #666; font-size: 0.9rem; }
+        a { color: #9146FF; }
+        /* ③ 連絡先カードは枠で目立たせる */
+        .contact-box {
+            background: #f5f3ff;
+            border-left: 4px solid #9146FF;
+            padding: 16px 20px;
+            margin: 1.5em 0;
+            border-radius: 4px;
+        }
+        footer { margin-top: 4em; padding-top: 1em; border-top: 1px solid #eee; font-size: 0.85rem; color: #888; }
+    </style>
+</head>
+<body>
+
+<h1>サポート - ClipsForTwitch</h1>
+<p class="meta">最終更新日: 2026年6月20日</p>
+
+<p>
+    ClipsForTwitch をご利用いただきありがとうございます。
+    本ページでは、よくあるご質問とお問い合わせ先をご案内します。
+</p>
+
+<h2>お問い合わせ</h2>
+<div class="contact-box">
+    <p>
+        不具合のご報告、ご要望、その他のお問い合わせは以下のメールアドレスまでお願いします。
+    </p>
+    <p>
+        メール: <a href="mailto:clipsfortwitchweb@gmail.com">clipsfortwitchweb@gmail.com</a><br>
+        対応時間: 平日・土日含め、可能な限り 3 営業日以内に返信します（個人開発のため遅延する場合があります）
+    </p>
+    <p>
+        お問い合わせの際は、以下の情報を添えていただくとスムーズです：
+    </p>
+    <ul>
+        <li>ご利用端末（例: iPhone 15 Pro）</li>
+        <li>iOS のバージョン（例: iOS 18.4）</li>
+        <li>アプリのバージョン（設定画面下部に表示）</li>
+        <li>発生した症状・操作手順</li>
+    </ul>
+</div>
+
+<h2>よくある質問（FAQ）</h2>
+<dl class="faq">
+
+    <dt>Q1. ホーム画面にクリップが 1 件も表示されません</dt>
+    <dd>
+        ClipsForTwitch は、登録した配信者の <strong>直近 7 日間</strong> のクリップを表示する仕様です。
+        その期間に新しいクリップが投稿されていない場合は表示されません。
+        画面を下に引っ張る「Pull-to-refresh」操作で最新情報を取得できます。
+    </dd>
+
+    <dt>Q2. ログインしなくても使えますか？</dt>
+    <dd>
+        はい、ログインなし（ゲスト）でもご利用いただけます。
+        ただし、登録できる配信者数に以下の上限があります：
+        <ul>
+            <li>ゲスト（未ログイン）: 5 人まで</li>
+            <li>無料ログイン（Twitch アカウント）: 10 人まで</li>
+            <li>Pro プラン: 30 人まで（近日提供予定）</li>
+        </ul>
+    </dd>
+
+    <dt>Q3. 配信者の登録上限を増やしたい</dt>
+    <dd>
+        設定画面の「Twitch でログイン」から、お持ちの Twitch アカウントでログインしてください。
+        登録できる配信者が 10 人に拡張されます。
+        ログインしても料金は一切発生しません。
+    </dd>
+
+    <dt>Q4. クリップを再生すると「アクセスが集中しています」と表示されます</dt>
+    <dd>
+        Twitch サーバー側のレート制限に到達した場合に表示されるメッセージです。
+        数秒〜1 分ほど時間を置いてから再度お試しください。
+        頻発する場合は、Twitch アカウントでログインしていただくと改善することがあります。
+    </dd>
+
+    <dt>Q5. お気に入りに登録したクリップはどこに保存されますか？</dt>
+    <dd>
+        お気に入りクリップは、ご利用の端末内（iOS の SwiftData）にのみ保存されます。
+        開発者のサーバーや iCloud には同期されません。
+        アプリを削除すると、お気に入り情報も合わせて削除されます。
+    </dd>
+
+    <dt>Q6. Twitch アカウントとの連携を解除したい</dt>
+    <dd>
+        以下のいずれかの方法で連携を解除できます：
+        <ul>
+            <li>アプリ内の「設定」→「ログアウト」ボタンを押す</li>
+            <li>
+                Twitch 側で完全に連携を解除したい場合は
+                <a href="https://www.twitch.tv/settings/connections" target="_blank" rel="noopener">Twitch の Connections 設定</a>
+                から「StreamerClips App」の連携を解除してください
+            </li>
+        </ul>
+    </dd>
+
+    <dt>Q7. クリップが Twitch アプリ / ブラウザで再生されるのは？</dt>
+    <dd>
+        ClipsForTwitch は Twitch 公式の埋め込みプレイヤー（embed）を使用しています。
+        これは Twitch の利用規約に準拠した正規の再生方法です。
+        再生に関する問題（音が出ない、止まる等）は、Twitch 側の不具合の可能性があります。
+    </dd>
+
+    <dt>Q8. データの削除方法を教えてください</dt>
+    <dd>
+        アプリを iOS の標準操作（ホーム画面でアイコン長押し → アプリを削除）で削除すると、
+        登録した配信者リスト、お気に入りクリップ、ログイントークンを含むすべてのデータが削除されます。
+    </dd>
+
+</dl>
+
+<h2>関連リンク</h2>
+<ul>
+    <li><a href="./privacy.html">プライバシーポリシー</a></li>
+    <li><a href="https://www.twitch.tv/p/legal/terms-of-service/" target="_blank" rel="noopener">Twitch 利用規約</a></li>
+</ul>
+
+<footer>
+    &copy; 2026 Sohei Fujita. ClipsForTwitch is not affiliated with or endorsed by Twitch Interactive, Inc.
+</footer>
+
+</body>
+</html>
