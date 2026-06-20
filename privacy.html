@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー - ClipsForTwitch</title>
+    <style>
+        /* ① 読みやすさ優先のシンプルなスタイル（スマホでも崩れない最大幅指定） */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 16px 64px;
+        }
+        h1 { font-size: 1.6rem; border-bottom: 2px solid #9146FF; padding-bottom: 8px; }
+        h2 { font-size: 1.2rem; margin-top: 2em; color: #9146FF; }
+        /* ② テーブルは情報密度高めの項目に使う */
+        table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+        th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; vertical-align: top; }
+        th { background: #f5f3ff; }
+        .meta { color: #666; font-size: 0.9rem; }
+        a { color: #9146FF; }
+        footer { margin-top: 4em; padding-top: 1em; border-top: 1px solid #eee; font-size: 0.85rem; color: #888; }
+    </style>
+</head>
+<body>
+
+<h1>プライバシーポリシー</h1>
+<p class="meta">最終更新日: 2026年6月20日</p>
+
+<p>
+    本プライバシーポリシー（以下「本ポリシー」）は、Sohei Fujita（以下「開発者」）が提供する
+    iOS アプリケーション <strong>ClipsForTwitch</strong>（以下「本アプリ」）における、
+    ユーザー情報の取り扱いについて定めるものです。
+</p>
+
+<h2>1. 取得する情報</h2>
+<p>本アプリは、以下の情報を取得します。</p>
+<table>
+    <tr>
+        <th>情報</th>
+        <th>取得タイミング</th>
+        <th>取得元</th>
+    </tr>
+    <tr>
+        <td>Twitch ユーザー ID / 表示名 / プロフィール画像 URL</td>
+        <td>Twitch アカウントでログインした時のみ</td>
+        <td>Twitch Helix API</td>
+    </tr>
+    <tr>
+        <td>アクセストークン / リフレッシュトークン</td>
+        <td>Twitch アカウントでログインした時のみ</td>
+        <td>Twitch OAuth サーバー</td>
+    </tr>
+    <tr>
+        <td>ユーザーが登録した配信者リスト・お気に入りクリップ</td>
+        <td>アプリ内操作時</td>
+        <td>ユーザー入力</td>
+    </tr>
+</table>
+<p>
+    Twitch アカウントでログインしない場合（ゲスト利用時）、上記のうち Twitch 関連情報は一切取得しません。
+</p>
+
+<h2>2. 利用目的</h2>
+<ul>
+    <li>Twitch API を通じたクリップ情報の取得・表示</li>
+    <li>Twitch API のレート制限を分散するためのユーザー識別</li>
+    <li>ユーザーが登録した配信者・お気に入りの保持と表示</li>
+</ul>
+
+<h2>3. 情報の保管場所</h2>
+<table>
+    <tr><th>情報</th><th>保管場所</th><th>iCloud 同期</th></tr>
+    <tr>
+        <td>アクセストークン / リフレッシュトークン</td>
+        <td>iOS Keychain（端末ローカル）</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>Twitch ユーザー ID / 表示名 / プロフィール画像 URL</td>
+        <td>SwiftData（端末ローカル）</td>
+        <td>なし</td>
+    </tr>
+    <tr>
+        <td>配信者リスト・お気に入りクリップ</td>
+        <td>SwiftData（端末ローカル）</td>
+        <td>なし</td>
+    </tr>
+</table>
+<p>
+    本アプリは、これらの情報を開発者のサーバーや外部サービスへ送信しません
+    （Twitch API の呼び出しを除く）。
+</p>
+
+<h2>4. 第三者提供</h2>
+<p>
+    本アプリは、ユーザー情報を以下を除き第三者に提供しません。
+</p>
+<ul>
+    <li>
+        <strong>Twitch Interactive, Inc.</strong> — クリップ情報の取得および
+        OAuth 認証のために、Twitch Helix API を呼び出します。
+        Twitch のプライバシーポリシーは
+        <a href="https://www.twitch.tv/p/legal/privacy-notice/" target="_blank" rel="noopener">こちら</a>
+        をご参照ください。
+    </li>
+</ul>
+
+<h2>5. Cookie / トラッキング / 広告</h2>
+<p>
+    本アプリは、解析ツール（Google Analytics 等）および広告 SDK を使用していません。
+    ユーザーの行動ログを開発者が収集することはありません。
+</p>
+
+<h2>6. データの削除</h2>
+<ul>
+    <li>アプリ内の「ログアウト」操作により、Keychain 内のトークンを削除します。</li>
+    <li>アプリを端末からアンインストールすると、保存された全データ（配信者リスト・お気に入り・トークン）が削除されます。</li>
+    <li>Twitch 側の連携解除は
+        <a href="https://www.twitch.tv/settings/connections" target="_blank" rel="noopener">Twitch の Connections 設定</a>
+        から行えます。</li>
+</ul>
+
+<h2>7. 子どもの個人情報</h2>
+<p>
+    本アプリは 13 歳未満（米国 COPPA 基準）または日本国内の未成年者を対象としていません。
+    保護者の同意なく未成年者が本アプリを利用していることが判明した場合、関連データを速やかに削除します。
+</p>
+
+<h2>8. セキュリティ</h2>
+<p>
+    アクセストークンは iOS Keychain の
+    <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code> 属性で保管され、
+    端末ロック解除後のみ復号可能かつ iCloud 同期対象外です。
+    Twitch API との通信はすべて HTTPS で暗号化されています。
+</p>
+
+<h2>9. 本ポリシーの変更</h2>
+<p>
+    本ポリシーは、法令の変更や本アプリの機能追加に伴い改定されることがあります。
+    重要な変更がある場合は、本アプリまたは本ページで通知します。
+    最新版は常に本ページで公開します。
+</p>
+
+<h2>10. 準拠法</h2>
+<p>
+    本ポリシーは、日本国の法令（個人情報保護法を含む）および
+    Apple App Store Review Guidelines に準拠して運用されます。
+</p>
+
+<h2>11. お問い合わせ</h2>
+<p>
+    本ポリシーに関するご質問は、以下までご連絡ください。
+</p>
+<p>
+    開発者: Sohei Fujita<br>
+    メールアドレス: <a href="mailto:clipsfortwitchweb@gmail.com">clipsfortwitchweb@gmail.com</a>
+</p>
+
+<footer>
+    &copy; 2026 Sohei Fujita. ClipsForTwitch is not affiliated with or endorsed by Twitch Interactive, Inc.
+</footer>
+
+</body>
+</html>
